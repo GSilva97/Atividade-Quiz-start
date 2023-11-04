@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt.br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Bem vindo ao quiz sobre HTML, CSS e JavaScript</h1>
+        
+        <ol>
+            <li>
+                <p> O que significa a sigla "HTML"?</p>
+                <label><input type="radio" name="q1" value="1"> Hypertext Markup Language</label><br>
+                <label><input type="radio" name="q1" value="2"> High-Level Text Management Language</label><br>
+                <label><input type="radio" name="q1" value="3"> Hipertext Transfer Language</label><br>
+            </li>
+            <li>
+                <p> Qual comando JavaScript é usado para declarar uma variável?</p>
+                <label><input type="radio" name="q2" value="1">Variable</label><br>
+                <label><input type="radio" name="q2" value="2"> Var</label><br>
+                <label><input type="radio" name="q2" value="3">Let</label><br>
+            </li>
+            <li>
+                <p> Qual unidade de medida CSS é usada para dimensionar elementos de acordo com a largura da janela de visualização?</p>
+                <label><input type="radio" name="q3" value="1">px</label><br>
+                <label><input type="radio" name="q3" value="2">%</label><br>
+                <label><input type="radio" name="q3" value="3">vw</label><br>
+            </li>
+            <li>
+                <p>Qual método JavaScript é usado para adicionar um elemento no final de um array?</p>
+                <label><input type="radio" name="q4" value="1">push()</label><br>
+                <label><input type="radio" name="q4" value="2">append()</label><br>
+                <label><input type="radio" name="q4" value="3">add()</label><br>
+            </li>
+            <li>
+                <p> Qual é a finalidade principal do CSS em uma página web?</p>
+                <label><input type="radio" name="q5" value="1">Gerenciar o conteúdo textual da página.</label><br>
+                <label><input type="radio" name="q5" value="2">Definir o estilo e o layout da página.</label><br>
+                <label><input type="radio" name="q5" value="3">Lidar com as funcionalidades interativas da página.</label><br>
+            </li>
+        </ol>
+
+        <button onclick="AvaliarRespostas()">Enviar respostas</button>
+        <p id="Pontuacao"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+  body {
+        background-color: greenyellow;
+        color: black;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .quiz-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: aliceblue;
+        color: black;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    label {
+        display: flexbox;
+        margin-top: 30px;
+    }
+
+    button {
+        background-color: black;
+        color: whitesmoke;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    #Pontuacao {
+        margin-top: 20px;
+        font-size: larger;
+    }

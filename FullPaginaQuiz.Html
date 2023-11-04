@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt.br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: greenyellow;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        }
+        
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: aliceblue;
+            color: black;
+        }
+    
+        h1 {
+            color: black;
+        }
+        
+        label {
+            display: flexbox;
+            margin-top: 30px;
+        }
+        
+        button {
+            background-color: black;
+            color: whitesmoke;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        #Pontuacao {
+            margin-top: 20px;
+            font-size: larger;
+        }</style>
+    <div class="quiz-container">
+        <h1>Bem vindo ao quiz sobre HTML, CSS e JavaScript</h1>
+        
+        <ol>
+            <li>
+                <p> O que significa a sigla "HTML"?</p>
+                <label><input type="radio" name="q1" value="1"> Hypertext Markup Language</label><br>
+                <label><input type="radio" name="q1" value="2"> High-Level Text Management Language</label><br>
+                <label><input type="radio" name="q1" value="3"> Hipertext Transfer Language</label><br>
+            </li>
+            <li>
+                <p> Qual comando JavaScript é usado para declarar uma variável?</p>
+                <label><input type="radio" name="q2" value="1">Variable</label><br>
+                <label><input type="radio" name="q2" value="2"> Var</label><br>
+                <label><input type="radio" name="q2" value="3">Let</label><br>
+            </li>
+            <li>
+                <p> Qual unidade de medida CSS é usada para dimensionar elementos de acordo com a largura da janela de visualização?</p>
+                <label><input type="radio" name="q3" value="1">px</label><br>
+                <label><input type="radio" name="q3" value="2">%</label><br>
+                <label><input type="radio" name="q3" value="3">vw</label><br>
+            </li>
+            <li>
+                <p>Qual método JavaScript é usado para adicionar um elemento no final de um array?</p>
+                <label><input type="radio" name="q4" value="1">push()</label><br>
+                <label><input type="radio" name="q4" value="2">append()</label><br>
+                <label><input type="radio" name="q4" value="3">add()</label><br>
+            </li>
+            <li>
+                <p> Qual é a finalidade principal do CSS em uma página web?</p>
+                <label><input type="radio" name="q5" value="1">Gerenciar o conteúdo textual da página.</label><br>
+                <label><input type="radio" name="q5" value="2">Definir o estilo e o layout da página.</label><br>
+                <label><input type="radio" name="q5" value="3">Lidar com as funcionalidades interativas da página.</label><br>
+            </li>
+        </ol>
+
+        <button onclick="AvaliarRespostas()">Enviar respostas</button>
+        <p id="Pontuacao"></p>
+
+        <script>
+            function AvaliarRespostas() {
+                const respostasCorretas = {
+                    q1: '1',
+                    q2: '2',
+                    q3: '3',
+                    q4: '1',
+                    q5: '2',
+                };
+                const RespostasSelecionadas = {
+                    q1: document.querySelector('input[name="q1"]:checked').value,
+                    q2: document.querySelector('input[name="q2"]:checked').value,
+                    q3: document.querySelector('input[name="q3"]:checked').value,
+                    q4: document.querySelector('input[name="q4"]:checked').value,
+                    q5: document.querySelector('input[name="q5"]:checked').value,
+                };
+                let Pontuacao = 0;
+                for (const perguntas in respostasCorretas) {
+                    if (respostasCorretas[perguntas] === RespostasSelecionadas[perguntas]) {
+                        Pontuacao++;
+                    }
+                }
+
+                const pontuacaoElement = document.getElementById('Pontuacao');
+                pontuacaoElement.textContent = `Pontuação: ${Pontuacao} de 5`;
+                if (Pontuacao === 5) {
+                    pontuacaoElement.textContent += " Parabéns!!!!!!";
+                    const gifImage = document.createElement('img');
+                    gifImage.src = "https://media.tenor.com/UKKPyTd7AS0AAAAM/manoel-gomes.gif";
+                    document.body.appendChild(gifImage);
+                }
+                else if (Pontuacao >= 1 && Pontuacao <= 4) {
+                    pontuacaoElement.textContent += " Quase lá, não desista!";
+                }
+                else if (Pontuacao === 0) {
+                    pontuacaoElement.textContent += " você... não... não acertou nenhuma pergunta?!!!";
+                    const imagem = document.createElement('img');
+                    imagem.src = "https://th.bing.com/th/id/OIP.970XsL2XvjGgZHhFCumF6QHaHG?w=193&h=185&c=7&r=0&o=5&pid=1.7";
+                    document.body.appendChild(imagem);
+                }
+                
+            }
+        </script>
+    </div>
+</body>
+</html>
